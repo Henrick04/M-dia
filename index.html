@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando a Média</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+       <h1>Vamos Calcular a sua Média:</h1>
+
+        <input type="number" name="nota1" id="nota1" placeholder="Digite a primeira nota">
+        <input type="number" name="nota2" id="nota2" placeholder="Digite a segunda nota">
+        <input type="button" value="Média" onclick="media()" class="botao">
+        <div id="res">Calculando o resultado...</div> 
+    </main>
+    
+    
+</body>
+
+<script>
+    function media(){
+        var tn1 = window.document.getElementById('nota1');
+        var tn2 = window.document.getElementById('nota2');
+        var res = window.document.getElementById('res');
+        
+        var n1 = Number(tn1.value);
+        var n2 = Number(tn2.value);
+
+        var media = (n1 + n2) / 2;
+        
+        if (media >= 7){
+            res.innerHTML = `A sua média é<strong> ${media}</strong>. Parabéns você está aprovado!`
+        } else{
+            if(media <= 0){
+                window.alert('Valor inválido!')
+            } else{
+                res.innerHTML = `A sua média é <strong>${media}</strong>. Você está de recupeação estude mais!`
+            }
+            
+        }
+        
+    }
+</script>
+</html>
